@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="app">
-        <div class="screen join-screen ">
+        <div class="screen join-screen active">
             <div class="form">
                 <h2>Join Chatroom</h2>
                 <div class="form-input">
@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <div class="screen chat-screen active" >
+        <div class="screen chat-screen " >
             <div class="header">
                 <div class="logo">Chatroom</div>
                 <button id="exit-chat">Exit</button>
@@ -37,5 +37,14 @@
 
     <script type="text/javascript" src="socket.io/socket.io.js"></script>
     <script type="text/javascript" src="code.js"></script>
+    <div>
+        <div class="name">${message.username}</div>
+        <div class="text">${message.text}</div>
+    </div>
 </body>
 </html>
+
+<div>
+    <div class="name">You</div>
+    <div class="text">${message.text}</div>
+</div>
