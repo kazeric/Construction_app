@@ -4,7 +4,7 @@ import { useToast, Toast } from '@chakra-ui/react';
 import axios from "axios";
 import { useHistory } from "react-router";
 
-const Signup = () => {
+const UserSignup = () => {
   const toast = useToast(); 
   const [show, setShow] = useState(false);  
   const [name, setName] = useState();
@@ -193,13 +193,13 @@ const Signup = () => {
         variant="solid"
         colorScheme="red"
         width="100%"
-        onClick={() => {history.push("/UserRegister")
+        onClick={() => {history.push("/register")
         }}
       >
-        Looking for user Login?
+        Are you an admin?
       </Button>
     </VStack>
   );
 };
 
-export default Signup
+export default UserSignup
