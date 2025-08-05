@@ -39,7 +39,33 @@ export const isSameUser = (messages, m, i) => {
 };
 
 export const getSender = (loggedUser, users) => {
-  return users[0]._id === loggedUser._id ? users[1].name : users[0].name;
+  // Debug logs to help identify issues
+  console.log("getSender called with:", { loggedUser, users });
+  
+  if (!loggedUser) {
+    console.warn("getSender: loggedUser is null or undefined");
+    return "Unknown User";
+  }
+  
+  if (!users || !Array.isArray(users)) {
+    console.warn("getSender: users is not a valid array", users);
+    return "Unknown User";
+  }
+  
+  if (users.length < 2) {
+    console.warn("getSender: users array has less than 2 users", users);
+    return "Unknown User";
+  }
+  
+  // Find the other user (not the logged user)
+  const otherUser = users.find(user => user._id !== loggedUser._id);
+  
+  if (!otherUser) {
+    console.warn("getSender: Could not find other user", { loggedUser: loggedUser._id, users });
+    return "Unknown User";
+  }
+  
+  return otherUser.name || "Unnamed User";
 };
 
 export const getSenderFull = (loggedUser, users) => {
