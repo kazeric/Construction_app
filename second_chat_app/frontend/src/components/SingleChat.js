@@ -50,9 +50,9 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   
         
         const { data } = await axios.get(
-          `/api/messages/${selectedChat._id}`,
+          `https://construction-app-zekq.onrender.com/api/messages/${selectedChat._id}`,
           config
-          );
+        );
         setLoading(true);
         setMessages(data);
         setLoading(false);
@@ -110,13 +110,13 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           },
         };
         const { data } = await axios.post(
-          "/api/messages",
+          "https://construction-app-zekq.onrender.com/api/messages",
           {
             content: newMessage,
             chatId: selectedChat._id,
           },
           config
-          );
+        );
 
           console.log(data);
 

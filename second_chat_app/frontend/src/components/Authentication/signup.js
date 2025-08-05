@@ -89,7 +89,7 @@ const Signup = () => {
           },
         };
         const { data } = await axios.post(
-          "/api/user",
+          "https://construction-app-zekq.onrender.com/api/user",
           {
             name,
             email,
