@@ -29,12 +29,11 @@ const PORT = process.env.PORT
 const server = app.listen(PORT, console.log(`server started on port ${PORT}`));
 
 const io = require("socket.io")(server, {
-    pingTimeout: 60000,
-    cors: {
-      origin: "http://localhost:3000",
-     
-    },
-  });
+  pingTimeout: 60000,
+  cors: {
+    origin: "https://construction-app-xi.vercel.app/",
+  },
+});
 
   io.on("connection", (socket) => {
     console.log("Connected to socket.io");
