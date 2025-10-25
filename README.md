@@ -90,7 +90,8 @@ The frontend package.json has a `proxy` configured for `http://127.0.0.1:5000` s
 ## Production build
 
 - Frontend: `cd frontend && npm run build` — produce static files in `frontend/build`.
-- Backend: host the built frontend (optional) or serve separately. See your hosting provider docs for combining a static frontend and Express backend.
+- Backend: host the built frontend (optional) or serve separately. See your hosting provider's docs for combining a static frontend and Express backend.
+- Check out the hosted app here https://construction-app-xi.vercel.app/
 
 ## Contact / Author
 
